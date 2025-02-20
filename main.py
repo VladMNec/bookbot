@@ -3,9 +3,18 @@ def main() -> str:
     book_text = get_text(book_path)
     book_word_count = count_words(book_text)
     book_character_count = count_characters(book_text)
-    print(book_text)
+    # print(book_text)
+    # print(f"{book_word_count} words found in the document")
+    # print(book_character_count)
+    print("--- Begin report of books/frankenstein.txt ---")
     print(f"{book_word_count} words found in the document")
-    print(book_character_count)
+    print()
+
+    for key in book_character_count:
+        if key.isalpha():
+            print(f"The '{key}' character was found {book_character_count[key]} times")
+            
+    print("--- End report ---")
 
 
 def count_words(book_text):
